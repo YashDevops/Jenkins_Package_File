@@ -8,21 +8,13 @@ pipeline{
 							sh 'mvn clean install'
 						}
 					}
-				}
-				stage('test'){
-					steps{
-						git url:'https://github.com/YashDevops/MMTPOC.git'
-						withMaven(maven:'mvn'){
-							sh 'mvn test -DskipTests'
-						}
-					}
 					post{
 						always{
-							echo "Hi this is to make that test step has been completed"
+							echo "This is to confirm that install has been success"
 						}
-					 	success{
-					 		echo "Though build has been passed but test cases has been skipped"
-					 	}
+						success{
+							echo "This is to make sure that the build has been success"
+						}
 					}
 				}
 				stage('Package'){
