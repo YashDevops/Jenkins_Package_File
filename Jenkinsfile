@@ -1,12 +1,16 @@
 pipeline {
 	agent any
-	tools {
-    maven 'mvn'
-  }
 	stages{
 	stage('package'){
 	steps{
-		sh 'mvn clean package'
+
+	steps {
+                withMaven(maven : 'mvn') {
+                    sh 'mvn clean compile'
+                }
+}
+	
+	
 	}
 	post{
 	success{
