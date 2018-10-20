@@ -5,7 +5,7 @@ pipeline{
 					steps{
 						git url:'https://github.com/YashDevops/MMTPOC.git'
 						withMaven(maven:'mvn'){
-							sh 'mvn clean install'
+							sh 'mvn clean compile'
 						}
 					}
 					post{
