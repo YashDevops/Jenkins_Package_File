@@ -1,7 +1,9 @@
 
 pipeline{
 	agent any
+	stages{
 	  stage ('Build') {
+	}
  
     git url: 'https://github.com/YashDevops/MMTPOC.git'
  
@@ -18,4 +20,5 @@ pipeline{
  
     } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe & FindBugs reports...
   }
+}
 }
