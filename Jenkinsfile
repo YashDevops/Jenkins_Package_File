@@ -4,7 +4,7 @@ pipeline{
 	stages{
 
 		stage('Clone repo'){
-			git url:'https://github.com/YashDevops/MMTPOC.git'
+			GIT_URL:'https://github.com/YashDevops/MMTPOC.git'
 		}
 		stage('build'){
 			steps{
